@@ -19,19 +19,7 @@ export const actions = {
 
     commit("POKEMON_SEARCH", pokemons);
   },
-  async delete({ commit }, video) {
-    let response = await this.$axios.delete(`/videos/${video.id}`);
-    if (response.status == 200 || response.status == 204) {
-      commit("DELETE_VIDEO", video.id);
-    }
-  },
-  async edit({ commit }, video) {
-    let response = await this.$axios.put(`/videos/${video.id}`, video);
-    let newVideo = response.data.data;
-    deserializeVideos([newVideo]);
-    commit("EDIT_VIDEO", newVideo.attributes);
-    return newVideo.attributes;
-  }
+ 
 };
 
 export const getters = {
