@@ -35,13 +35,13 @@
                       >{{ type.type.name }}</v-chip>
                     </v-list-item-content>
                   </v-list-item>
-                  <v-list-item>
+                  <v-list-item v-if="pokemon.held_items.length">
                     <v-list-item-content>
                       <h2>held items</h2>
                       <v-chip
                         v-for="(held_item, heldkey) in pokemon.held_items"
                         :key="'heldkey'+heldkey"
-                      >{{ held_item.item.name }}</v-chip>
+                      >{{ held_item.item.name.replace("-", " ") }}</v-chip>
                     </v-list-item-content>
                   </v-list-item>
                   <v-list-item>
