@@ -18,8 +18,7 @@ export const actions = {
     pokemons.push(response.data);
 
     commit("POKEMON_SEARCH", pokemons);
-  },
- 
+  }
 };
 
 export const getters = {
